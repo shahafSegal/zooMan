@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+}
+
+#mainGrid{
+    display: grid;
+    min-width: 100vw;
+    min-height: 100vh;
+    grid-template-rows: repeat(4,auto);
+    grid-template-columns: 25% 1fr;
+    grid-template-areas: 
+    "header header "
+    "sidebar main"
+    "sidebar main"
+    "footer footer";
+}
+
+
+header{
+    grid-area: header;
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.main{
+    grid-area: main;
+    background-color: yellow;
+}
+footer{
+    grid-area: footer;
+    background-color: green;
+}
+.sidebar{
+    grid-area: sidebar;
+    background-color: red;
+}
