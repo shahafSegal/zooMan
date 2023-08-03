@@ -6,7 +6,7 @@ body{
     display: grid;
     max-width:100vw;
     min-height: 100vh;
-    grid-template-rows: repeat(4,auto);
+    grid-template-rows: 10% 40% 40% 10%;
     grid-template-columns: 25% 1fr;
     grid-template-areas: 
     "header header "
@@ -24,8 +24,6 @@ header{
     align-items: center;
 }
 .main{ 
-    width: 100%;
-    height: 100%;
     grid-area: main;
     background-color: yellow;
     display: flex;
@@ -53,11 +51,52 @@ footer{
     height: 30%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 1px solid;
-    overflow: auto;
 }
 
 
 .animalCard img{
-    width: 30%;
+    height: 60%;
+    max-width: 80%;
+}
+
+.fltrBlur{
+    filter: blur(1px);
+}
+.fltrInvert{
+    filter: invert(0.25);
+}
+
+.fltrSat{
+    filter: saturate(200%);
+}
+
+
+
+
+@media  screen and (max-width: 600px) {
+    #mainGrid{
+        grid-template-areas: 
+        "header header "
+        "main main"
+        "main main"
+        "footer footer";
+        grid-template-rows: 5% 45% 45% 5%;
+    }
+
+    .main{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .animalCard img{
+        max-height: 10vh;
+        
+    }
+    .animalCard{
+        width: 99%;
+        height: 20vh;
+    }
+    .sidebar{display: none;}
+
 }
